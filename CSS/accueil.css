@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Mise en page Grid (Contenu principal)
+   ========================================================================== */
+main {
+    /***********************/
+    /* Mise en page (Grid) */
+    /***********************/
+    display: grid;
+    /* Active le mode Grid pour le conteneur principal */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Définit 3 colonnes de taille égale */
+    grid-template-areas:
+        "nav   nav   nav"
+        "about about about"
+        "competences experiences formations";
+    /* Définit les zones nommées pour le positionnement des enfants */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    gap: 10px;
+    /* Espace de 10px entre les éléments de la grille */
+}
+
+/* --- Assignation des zones de la grille --- */
+main>nav {
+    grid-area: nav;
+    /* Place la navigation dans la zone 'nav' */
+}
+
+#about {
+    grid-area: about;
+    /* Place la section 'about' dans la zone 'about' */
+}
+
+#competences {
+    grid-area: competences;
+    /* Place la section 'competences' dans la zone 'competences' */
+}
+
+#experiences {
+    grid-area: experiences;
+    /* Place la section 'experiences' dans la zone 'experiences' */
+}
+
+#formations {
+    grid-area: formations;
+    /* Place la section 'formations' dans la zone 'formations' */
+}
+
+/* ==========================================================================
+   Navigation Interne (dans Main)
+   ========================================================================== */
+
+/* --- Liste de la navigation interne --- */
+main nav ul {
+    /***********/
+    /* Flexbox */
+    /***********/
+    display: flex;
+    /* Utilise Flexbox pour aligner les éléments horizontalement */
+    justify-content: center;
+    /* Centre les éléments dans la ligne */
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    gap: 12px;
+    /* Espace de 12px entre les éléments */
+    padding: 0;
+    /* Supprime le padding par défaut de la liste */
+    margin: 20px 0;
+    /* Marge verticale de 20px au-dessus et en dessous */
+
+    /******************/
+    /* Style de liste */
+    /******************/
+    list-style: none;
+    /* Supprime les puces de la liste */
+}
+
+/* --- Liens de la navigation interne --- */
+main nav a {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    display: inline-block;
+    /* Permet au lien d'être transformable et de gérer padding/marge */
+    padding: 6px 12px;
+    /* Espace intérieur autour du texte */
+
+    /***************/
+    /* Typographie */
+    /***************/
+    text-decoration: none;
+    /* Supprime le soulignement par défaut */
+    color: #fff;
+    /* Couleur du texte : blanc */
+    font-weight: bold;
+    /* Texte en gras */
+
+    /****************************/
+    /* Couleurs & Arrière-plans */
+    /****************************/
+    background-color: #0073e6;
+    /* Couleur de fond bleu vif */
+
+    /************/
+    /* Bordures */
+    /************/
+    border-radius: 6px;
+    /* Coins arrondis pour un effet "bouton" */
+
+    /***************/
+    /* Transitions */
+    /***************/
+    transition: transform 0.2s ease;
+    /* Animation fluide pour le déplacement au survol */
+}
+
+/* --- Survol des liens de navigation interne --- */
+main nav a:hover {
+    /****************************/
+    /* Couleurs & Arrière-plans */
+    /****************************/
+    background: linear-gradient(135deg, #0073e6, #00a2ff);
+    /* Dégradé appliqué au survol (prioritaire sur la couleur unie) */
+
+    /*******************/
+    /* Transformations */
+    /*******************/
+    transform: translateY(-3px) scale(1.05);
+    /* Soulève le lien et l’agrandit légèrement */
+}
+
+/* --- Focus (accessibilité) des liens de navigation interne --- */
+main nav a:focus {
+    /*********************/
+    /* Accessibilité (Focus) */
+    /*********************/
+    outline: 3px solid #005bb5;
+    /* Contour bleu pour l’accessibilité lors du focus clavier */
+    outline-offset: 2px;
+    /* Décalage du contour pour éviter qu’il touche le texte */
+}
+
+/* ==========================================================================
+   Sections de Contenu
+   ========================================================================== */
+
+/* --- Style général des sections --- */
+section {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin: 20px auto;
+    /* Marge verticale de 20px et centre horizontalement */
+    padding: 0 15px;
+    /* Espace intérieur gauche/droite de 15px */
+
+    /***********************/
+    /* Animation & Effets */
+    /***********************/
+    opacity: 0;
+    /* Commence invisible (pour l'animation) */
+    transform: translateY(15px);
+    /* Décalage vertical initial pour effet de glissement */
+    animation: fadeIn 0.8s ease forwards;
+    /* Animation vers la position finale avec opacité pleine */
+}
+
+/* --- Titres de section (h2) --- */
+section h2 {
+    /***************/
+    /* Typographie */
+    /***************/
+    font-size: 1.5rem;
+    /* Taille du titre légèrement plus grande */
+    color: #1e3a5f;
+    /* Couleur bleu foncé */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin-top: 30px;
+    /* Espace au-dessus du titre */
+    margin-bottom: 10px;
+    /* Espace en dessous du titre */
+    padding-bottom: 5px;
+    /* Espace entre le texte et la ligne */
+
+    /************/
+    /* Bordures */
+    /************/
+    border-bottom: 2px solid #ddd;
+    /* Ligne sous le titre pour le séparer visuellement */
+}
+
+/* --- Paragraphes de section --- */
+section p {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin-bottom: 15px;
+    /* Espace sous les paragraphes */
+}
+
+/* ==========================================================================
+   Éléments de Contenu (Listes, Liens, Adresse)
+   ========================================================================== */
+
+/* --- Listes à puces (dans section) --- */
+section ul {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    padding-left: 20px;
+    /* Décalage de la liste vers la droite */
+    margin-bottom: 20px;
+    /* Espace sous la liste */
+}
+
+/* --- Éléments de liste (dans section) --- */
+section li {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin-bottom: 8px;
+    /* Espace entre les éléments de la liste */
+}
+
+/* --- Liens (dans section) --- */
+section a {
+    /***************/
+    /* Typographie */
+    /***************/
+    color: #0066cc;
+    /* Couleur bleue pour les liens */
+    text-decoration: none;
+    /* Supprime le soulignement par défaut */
+}
+
+section a:hover {
+    /***************/
+    /* Typographie */
+    /***************/
+    text-decoration: underline;
+    /* Remet le soulignement au survol */
+}
+
+/* --- Balise Adresse --- */
+address {
+    /***************/
+    /* Typographie */
+    /***************/
+    font-style: normal;
+    /* Texte non italique, contrairement au style par défaut */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    display: inline;
+    /* L'adresse s'affiche sur la même ligne si possible */
+}
+
+/* ==========================================================================
+   Classes Utilitaires (Icônes)
+   ========================================================================== */
+
+/* --- Base des icônes (pseudo-élément) --- */
+.icon-about::before,
+.icon-competences::before,
+.icon-experiences::before,
+.icon-formations::before {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin-right: 8px;
+    /* Espace entre l'icône et le texte du titre */
+}
+
+/* --- Icônes spécifiques (Emoji) --- */
+.icon-about::before {
+    content: "👤";
+    /* Emoji représentant "À propos" */
+}
+
+.icon-competences::before {
+    content: "💻";
+    /* Emoji représentant les compétences informatiques */
+}
+
+.icon-experiences::before {
+    content: "📅";
+    /* Emoji représentant les expériences/agenda */
+}
+
+.icon-formations::before {
+    content: "🎓";
+    /* Emoji représentant les formations/diplômes */
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+/* --- Délais d'animation pour les sections --- */
+section:nth-of-type(2) {
+    animation-delay: 0.2s;
+    /* Décalage pour que cette section apparaisse après 0.2s */
+}
+
+section:nth-of-type(3) {
+    animation-delay: 0.4s;
+    /* Décalage pour que cette section apparaisse après 0.4s */
+}
+
+section:nth-of-type(4) {
+    animation-delay: 0.6s;
+    /* Décalage pour que cette section apparaisse après 0.6s */
+}
+
+/* --- Définition de l’animation fadeIn --- */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        /* Devient complètement visible */
+        transform: translateY(0);
+        /* Remonte à sa position normale */
+    }
+}

@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Mise en page de la Grille "Projets"
+   ========================================================================== */
+.projets {
+    /***********************/
+    /* Mise en page (Grid) */
+    /***********************/
+    display: grid;
+    /* Active le mode Grille */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Crée des colonnes responsives : 
+       - auto-fit: autant de colonnes que possible
+       - minmax: elles font au moins 300px et s'étendent (1fr) 
+    */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    gap: 20px;
+    /* Espace entre les articles de la grille */
+}
+
+/* ==========================================================================
+   Titre Principal de la Section "Projets"
+   ========================================================================== */
+.projets>h2 {
+    /***********************/
+    /* Mise en page (Grid) */
+    /***********************/
+    grid-column: 1 / -1;
+    /* Force le titre à s'étendre sur toutes les colonnes de la grille */
+
+    /***************/
+    /* Typographie */
+    /***************/
+    text-align: center;
+    /* Centré horizontalement */
+    font-size: 1.8rem;
+    /* Plus grand que les titres d’article */
+    font-weight: 600;
+    /* Texte semi-gras */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    padding-bottom: 5px;
+    /* Espace entre le texte et la ligne */
+
+    /************/
+    /* Bordures */
+    /************/
+    border-bottom: 2px solid #ccc;
+    /* Ligne discrète sous le titre */
+}
+
+/* ==========================================================================
+   Cartes de Projet (Article)
+   ========================================================================== */
+
+/* --- Style de base des articles --- */
+.projets>article {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    padding: 10px;
+    /* Espace intérieur */
+
+    /****************************/
+    /* Couleurs & Arrière-plans */
+    /****************************/
+    /* background: #f9f9f9;  <- Redondant, écrasé par le gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 25%, #d0f0ff 50%, #f0f8ff 75%, #ffffff 100%);
+    background-size: 300% 300%;
+    /* Agrandit le gradient pour l'animation */
+
+    /********************/
+    /* Bordures & Ombre */
+    /********************/
+    border: 1px solid #ddd;
+    /* Bordure légère */
+    border-radius: 8px;
+    /* Coins arrondis */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre discrète */
+
+    /***************/
+    /* Typographie */
+    /***************/
+    text-align: left;
+    /* Aligne le texte à gauche (par défaut) */
+
+    /******************/
+    /* Positionnement */
+    /******************/
+    position: relative;
+    /* Requis pour certains effets ou enfants positionnés */
+
+    /***************/
+    /* Transitions */
+    /***************/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transition fluide pour le survol */
+}
+
+/* --- Survol des articles --- */
+.projets>article:hover {
+    /*******************/
+    /* Transformations */
+    /*******************/
+    transform: translateY(-5px);
+    /* Soulève légèrement la carte */
+
+    /********************/
+    /* Bordures & Ombre */
+    /********************/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Ombre plus prononcée */
+
+    /*************/
+    /* Animation */
+    /*************/
+    animation: gradientMove 3s linear infinite;
+    /* Démarre l'animation du fond */
+}
+
+/* ==========================================================================
+   Contenu des Cartes (Typo, Images, Liens)
+   ========================================================================== */
+
+/* --- Titres des projets (h3) --- */
+.projets h3 {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin-top: 0;
+    /* Supprime la marge haute par défaut */
+
+    /***************/
+    /* Typographie */
+    /***************/
+    font-size: 1.1rem;
+    /* Taille de police */
+}
+
+/* --- Paragraphes des projets --- */
+.projets p {
+    /***************/
+    /* Typographie */
+    /***************/
+    font-size: 0.9rem;
+    /* Taille de police réduite */
+    color: #333;
+    /* Couleur de texte gris foncé */
+}
+
+/* --- Conteneur Figure (pour image) --- */
+.projets figure {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin: 0;
+    /* Supprime la marge par défaut */
+    padding: 0;
+    /* Supprime le padding par défaut */
+}
+
+/* --- Images des projets (fusion des doublons) --- */
+.projets figure img {
+    /**************/
+    /* Dimensions */
+    /**************/
+    width: 100%;
+    /* Prend toute la largeur de la carte */
+    height: auto;
+    /* Garde les proportions */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    display: block;
+    /* Évite les marges blanches sous l'image */
+    margin-bottom: 8px;
+    /* Espace sous l'image */
+
+    /************/
+    /* Bordures */
+    /************/
+    border-radius: 4px;
+    /* Coins arrondis légers */
+    border: 1px solid #ccc;
+    /* Bordure grise */
+
+    /***************/
+    /* Transitions */
+    /***************/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animation au survol */
+}
+
+/* --- Survol des images --- */
+.projets figure img:hover {
+    /*******************/
+    /* Transformations */
+    /*******************/
+    transform: scale(1.05);
+    /* Agrandit l'image */
+
+    /********************/
+    /* Bordures & Ombre */
+    /********************/
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    /* Ombre plus marquée */
+}
+
+/* --- Légendes des images --- */
+.projets figure figcaption {
+    /***************/
+    /* Typographie */
+    /***************/
+    font-size: 0.85rem;
+    /* Petite taille de police */
+    color: #666;
+    /* Couleur gris moyen */
+    text-align: center;
+    /* Texte centré */
+}
+
+/* --- Liens des projets --- */
+.projets a {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    display: inline-block;
+    /* Permet d'appliquer transform */
+
+    /***************/
+    /* Typographie */
+    /***************/
+    text-decoration: none;
+    /* Pas de soulignement par défaut */
+    color: #0066cc;
+    /* Couleur bleue */
+    font-weight: bold;
+    /* Texte en gras */
+
+    /***************/
+    /* Transitions */
+    /***************/
+    transition: color 0.3s ease, transform 0.2s ease;
+    /* Animation sur couleur et position */
+}
+
+/* --- Survol des liens --- */
+.projets a:hover {
+    /***************/
+    /* Typographie */
+    /***************/
+    color: #004a99;
+    /* Bleu plus foncé */
+    text-decoration: underline;
+    /* Soulignement au survol */
+
+    /*******************/
+    /* Transformations */
+    /*******************/
+    transform: translateY(-2px) scale(1.05);
+    /* Léger saut et zoom */
+}
+
+/* --- Focus (accessibilité) des liens --- */
+.projets a:focus {
+    /*********************/
+    /* Accessibilité (Focus) */
+    /*********************/
+    outline: 3px solid #005bb5;
+    /* Contour visible pour la navigation clavier */
+    outline-offset: 2px;
+    /* Espace entre le lien et le contour */
+}
+
+/* ==========================================================================
+   Animations (Keyframes)
+   ========================================================================== */
+
+/* --- Animation du gradient au survol des cartes --- */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+        /* Début en haut à gauche */
+    }
+
+    50% {
+        background-position: 100% 100%;
+        /* Milieu en bas à droite */
+    }
+
+    100% {
+        background-position: 0% 0%;
+        /* Retour au début */
+    }
+}
