@@ -1,1 +1,111 @@
-<DOCTYPE!>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1 — Portfolio Web</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- CSS spécifique aux pages projet -->
+    <link rel="stylesheet" href="../css/projet.css">
+
+    <!-- Icônes -->
+    <link rel="stylesheet" href="../polices/fontawesome/css/all.min.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <h1>Projet : Portfolio Web</h1>
+
+        <nav aria-label="Navigation principale">
+            <ul class="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../projets.html">Projets</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- SECTION : Présentation -->
+    <section aria-labelledby="presentation">
+        <h2 id="presentation">Présentation du projet</h2>
+
+        <p>
+            Ce projet consiste à créer un portfolio moderne, responsive et animé en HTML5 et CSS3.
+            L’objectif était de proposer une mise en page professionnelle tout en intégrant
+            Flexbox, Grid et des animations CSS propres.
+        </p>
+
+        <img src="../images/projets/projet1.png"
+             alt="Aperçu du portfolio web"
+             class="image-principale">
+    </section>
+
+    <!-- SECTION : Objectifs -->
+    <section aria-labelledby="objectifs">
+        <h2 id="objectifs">Objectifs pédagogiques</h2>
+
+        <ul class="liste-objectifs">
+            <li>Structurer correctement une page en HTML5 sémantique</li>
+            <li>Utiliser des variables CSS pour garantir la cohérence visuelle</li>
+            <li>Mettre en page avec Flexbox et CSS Grid</li>
+            <li>Créer des animations simples avec @keyframes</li>
+            <li>Optimiser le site pour le mobile (responsive design)</li>
+        </ul>
+    </section>
+
+    <!-- SECTION : Technologies -->
+    <section aria-labelledby="technos">
+        <h2 id="technos">Technologies utilisées</h2>
+
+        <div class="technos">
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span><i class="fab fa-figma"></i> Figma (pour le design)</span>
+        </div>
+    </section>
+
+    <!-- SECTION : Galerie -->
+    <section aria-labelledby="galerie">
+        <h2 id="galerie">Galerie du projet</h2>
+
+        <div class="galerie-images">
+            <img src="../images/projets/projet1-1.png"
+                 alt="Capture du header du portfolio">
+            <img src="../images/projets/projet1-2.png"
+                 alt="Présentation des sections du portfolio">
+            <img src="../images/projets/projet1-3.png"
+                 alt="Version mobile du portfolio">
+        </div>
+    </section>
+
+    <!-- SECTION : Conclusion -->
+    <section aria-labelledby="conclusion">
+        <h2 id="conclusion">Conclusion</h2>
+
+        <p>
+            Ce projet m’a permis de mettre en pratique les différents aspects de l’intégration web
+            moderne, du design responsive à l’utilisation de variables CSS.
+        </p>
+
+        <a href="../projets.html" class="btn retour">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2025 — Matthias Lemaire</p>
+</footer>
+
+</body>
+</html>
+
