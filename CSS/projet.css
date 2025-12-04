@@ -1,112 +1,25 @@
-/* ==========================================================================
-   En-tête d'Article
-   ========================================================================== */
+@import url('variables.css');
 
-/* --- Conteneur de l'en-tête (article>header) --- */
-article>header {
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin-bottom: 30px;
-    /* Espace sous le header pour séparer du contenu suivant */
-
-    /***************************/
-    /* Alignement & Typographie */
-    /***************************/
-    text-align: center;
-    /* Centre le contenu horizontalement (texte, images, etc.) */
+.projet-header {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
 }
 
-/* --- Image de l'en-tête d'article --- */
-article>header img {
-    /**************/
-    /* Dimensions */
-    /**************/
-    max-width: 100%;
-    /* L'image ne dépasse jamais la largeur de son conteneur (responsive) */
-    height: auto;
-    /* Conserve les proportions de l'image lors du redimensionnement */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin-top: 20px;
-    /* Espace au-dessus de l'image pour détachement visuel */
-
-    /********************/
-    /* Bordures & Ombre */
-    /********************/
-    border-radius: 8px;
-    /* Bords légèrement arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Ombre légère pour donner de la profondeur */
+.projet-header h1 {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
 }
 
-/* ==========================================================================
-   Titres de Section (H2)
-   ========================================================================== */
-
-/* --- Style commun des H2 de section (avec icônes) --- */
-section h2 {
-    /***********/
-    /* Flexbox */
-    /***********/
-    display: flex;
-    /* Permet d'aligner l'icône (pseudo-élément) et le texte */
-    align-items: center;
-    /* Centre verticalement l'icône et le texte */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    gap: 0.5em;
-    /* Espace entre le symbole (::before) et le texte */
-    margin-bottom: 1rem;
-    /* Espace sous le titre */
-
-    /***************/
-    /* Typographie */
-    /***************/
-    font-size: 1.5rem;
-    /* Taille de la police */
+.projet-contenu {
+  max-width: 900px;
+  margin: auto;
+  padding: var(--space-lg);
+  line-height: 1.8;
 }
 
-/* ==========================================================================
-   Icônes des Titres (Pseudo-éléments)
-   ========================================================================== */
-
-/* --- Icône Description 📝 --- */
-#description-projet::before {
-    /***********************/
-    /* Contenu (Pseudo-élément) */
-    /***********************/
-    content: "\1F4DD";
-    /* Emoji "Note" (📝) */
-}
-
-/* --- Icône Objectifs 🎯 --- */
-#objectifs-projet::before {
-    /***********************/
-    /* Contenu (Pseudo-élément) */
-    /***********************/
-    content: "\1F3AF";
-    /* Emoji "Cible" (🎯) */
-}
-
-/* --- Icône Compétences 🛠️ --- */
-#competences-visees::before {
-    /***********************/
-    /* Contenu (Pseudo-élément) */
-    /***********************/
-    content: "\1F6E0";
-    /* Emoji "Outils" (🛠️) */
-}
-
-/* --- Icône Résultat ✅ --- */
-#resultat-projet::before {
-    /***********************/
-    /* Contenu (Pseudo-élément) */
-    /***********************/
-    content: "\2705";
-    /* Emoji "Coche" (✅) */
+.projet-contenu img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin: var(--space-lg) 0;
+  box-shadow: var(--shadow-soft);
 }
