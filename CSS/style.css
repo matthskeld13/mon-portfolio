@@ -1,420 +1,80 @@
-/* ==========================================================================
-   CSS Général
-   ========================================================================== */
+@import url('variables.css');
+@import url('polices/poppins.css'); /* si tu en as */
 
-/* --- Corps de la page --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    /***************/
-    /* Typographie */
-    /***************/
-    font-family: 'Poppins', Arial, sans-serif;
-    /* Police principale : Poppins si disponible, sinon Arial, puis une police sans-serif */
-    color: #222;
-    /* Couleur du texte légèrement plus sombre que noir (priorise la couleur plus foncée de la deuxième définition) */
-    line-height: 1.5;
-    /* Hauteur de ligne pour améliorer la lisibilité */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin: 0;
-    /* Supprime la marge par défaut autour de la page */
-
-    /****************************/
-    /* Couleurs & Arrière-plans */
-    /****************************/
-    background: linear-gradient(135deg, #e8f0ff 0%, #f9fcff 100%);
-    /* Fond dégradé diagonal du bleu clair vers le blanc */
-
-    /***************/
-    /* Transitions */
-    /***************/
-    transition: background 0.5s ease;
-    /* Transition douce si le fond change dynamiquement */
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-dark);
+  background: var(--color-bg);
+  line-height: 1.6;
 }
 
-/* ==========================================================================
-   En-tête (Header)
-   ========================================================================== */
-body>header {
-    /***************/
-    /* Typographie */
-    /***************/
-    text-align: center;
-    /* Centre le contenu horizontalement */
-    color: white;
-    /* Texte en blanc (priorise la couleur blanche de la deuxième définition) */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    padding: 20px;
-    /* Espace intérieur autour du contenu du header */
-
-    /****************************/
-    /* Couleurs & Arrière-plans */
-    /****************************/
-    background: linear-gradient(135deg, #0073e6, #004a99);
-    /* Dégradé bleu du clair vers le foncé */
-
-    /********************/
-    /* Bordures & Ombre */
-    /********************/
-    border-bottom: 2px solid #ddd;
-    /* Bordure en bas du header pour le séparer du contenu */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    /* Ombre douce sous le header */
-
-    /* Transitions */
-    transition: background 0.3s ease;
-    /* Transition pour un changement de fond fluide */
+/* --- HEADER --- */
+header {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
 }
 
-/* --- Titre principal du Header (h1) --- */
-body>header h1 {
-    /***************/
-    /* Typographie */
-    /***************/
-    font-family: 'Roboto', sans-serif;
-    /* Police du titre : Roboto */
-    font-size: 2rem;
-    /* Taille du texte plus grande pour le titre principal */
-    letter-spacing: 0.5px;
-    /* Espacement des lettres pour un style plus aéré */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    /* Légère ombre portée pour améliorer la lisibilité */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin: 10px 0;
-    /* Espace vertical autour du titre */
+nav {
+  display: flex;
+  gap: var(--space-md);
 }
 
-/* --- Figure dans le header --- */
-body>header figure {
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin: 0 auto 10px;
-    /* Centre la figure horizontalement + marge basse de 10px */
-}
-
-/* --- Image de profil --- */
-body>header img {
-    /**************/
-    /* Dimensions */
-    /**************/
-    width: 150px;
-    /* Largeur fixe de l'image */
-
-    /********************/
-    /* Bordures & Ombre */
-    /********************/
-    border-radius: 50%;
-    /* Rend l'image ronde */
-    border: 3px solid #0066cc;
-    /* Bordure bleue autour de l'image */
-
-    /***************/
-    /* Transitions */
-    /***************/
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Transition fluide pour l'effet de zoom/rotation et l'ombre */
-}
-
-body>header img:hover {
-    /*******************/
-    /* Transformations */
-    /*******************/
-    transform: scale(1.08) rotate(2deg);
-    /* Agrandissement léger et rotation pour effet dynamique */
-
-    /*********/
-    /* Ombre */
-    /*********/
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    /* Ombre portée plus marquée au survol */
-}
-
-/* --- Légende de l'image de profil --- */
-body>header figcaption {
-    /***************/
-    /* Typographie */
-    /***************/
-    font-size: 1rem;
-    /* Taille normale du texte */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin-top: 8px;
-    /* Espace entre l'image et la légende */
-}
-
-/* --- Navigation principale (dans le header) --- */
-body>header nav ul {
-    /***********/
-    /* Flexbox */
-    /***********/
-    display: flex;
-    /* Utilise Flexbox pour aligner les liens horizontalement */
-    justify-content: center;
-    /* Centre les éléments horizontalement */
-    gap: 15px;
-    /* Espace entre chaque élément de navigation */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    padding: 0;
-    /* Supprime le padding par défaut */
-    margin: 10px 0 0;
-    /* Marge en haut de la liste, pas en bas */
-
-    /******************/
-    /* Style de liste */
-    /******************/
-    list-style: none;
-    /* Supprime les puces de la liste */
-}
-
-/* --- Liens de navigation principale (dans le header) --- */
-body>header nav a {
-    /***************/
-    /* Typographie */
-    /***************/
-    text-decoration: none;
-    /* Supprime le soulignement des liens */
-    color: #bfc5cb;
-    /* Couleur bleue des liens */
-    font-weight: bold;
-    /* Texte en gras */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    padding: 6px 10px;
-    /* Espace autour du texte pour créer un bouton */
-
-    /************/
-    /* Bordures */
-    /************/
-    border-radius: 4px;
-    /* Coins arrondis pour les liens */
-
-    /******************/
-    /* Positionnement */
-    /******************/
+.menu a {
     position: relative;
-    /* Permet de positionner des pseudo-éléments par rapport au lien */
-    overflow: hidden;
-    /* Masque tout ce qui dépasse du lien, utile pour l’animation de ::after */
-
-    /***************/
-    /* Transitions */
-    /***************/
-    transition: color 0.3s ease;
-    /* Rend le changement de couleur fluide lorsqu'il y a interaction */
+    display: inline-block;
+    transition: transform 0.25s ease;
 }
 
-body>header nav a:hover {
-    /************/
-    /* Couleurs */
-    /************/
-    background-color: #ddd;
-    /* Fond gris clair au survol pour indiquer l’interaction */
-    color: #333;
-}
-
-/* --- Barre animée sous le lien (pseudo-élément) --- */
-body>header nav a::after {
+.menu a::after {
     content: "";
-    /* Nécessaire pour créer un pseudo-élément vide */
-
-    /******************/
-    /* Positionnement */
-    /******************/
     position: absolute;
-    /* Position absolue par rapport au lien parent */
-    bottom: 0;
-    /* Positionné en bas du lien */
+    bottom: -4px;
     left: 0;
-    /* Aligne le pseudo-élément à gauche */
-
-    /**************/
-    /* Dimensions */
-    /**************/
     width: 0%;
-    /* Largeur initiale : 0%, donc invisible */
-    height: 3px;
-    /* Hauteur de la barre */
-
-    /****************************/
-    /* Couleurs & Arrière-plans */
-    /****************************/
-    background: white;
-    /* Couleur de la barre */
-
-    /***************/
-    /* Transitions */
-    /***************/
-    transition: width 0.3s ease;
-    /* Rend l’extension de la barre fluide */
+    height: 2px;
+    background: var(--color-brand-primary);
+    transition: width 0.25s ease;
 }
 
-/* --- Effet sur le survol de la barre de navigation --- */
-body>header nav a:hover::after {
+.menu a:hover {
+    transform: scale(1.12);
+}
+
+.menu a:hover::after {
     width: 100%;
-    /* La barre s’étend sur toute la largeur du lien */
 }
 
-/* --- Effet de clic sur l’élément li du header --- */
-body>header nav li:active {
-    /*******************/
-    /* Transformations */
-    /*******************/
-    transform: scale(0.9);
-    /* Réduit le lien de 10% lors du clic pour effet “pressé” */
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  transition: background 0.3s;
 }
 
-/* ==========================================================================
-   Contenu principal (Main)
-   ========================================================================== */
-main {
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    max-width: 1000px;
-    margin: auto;
+nav a:hover {
+  background: var(--color-hover);
 }
 
-/* --- Titre principal du main (h1) --- */
-main>h1 {
-    /***************/
-    /* Typographie */
-    /***************/
-    text-align: center;
-    /* Centre le titre principal du main */
-    color: #1e3a5f;
-    /* Couleur bleu foncé */
-    font-size: 2rem;
-    /* Taille du texte plus grande */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin: 20px 0;
-    /* Espace vertical autour du titre */
-}
-
-/* --- Sections et articles principaux du main --- */
-main>section,
-main>article {
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin: 0 auto 40px;
-    /* Centre horizontalement + marge en bas de 40px */
-    padding: 0 15px;
-    /* Espace intérieur gauche/droite de 15px */
-}
-
-/* --- Titres de section et d'article (h2) --- */
-main>section h2,
-main>article h2 {
-    /***************/
-    /* Typographie */
-    /***************/
-    color: #1e3a5f;
-    /* Couleur du titre (bleu foncé) */
-    font-size: 1.5em;
-    /* Taille du texte 1,5 fois la taille normale */
-}
-
-/* ==========================================================================
-   Pied de page (Footer)
-   ========================================================================== */
+/* --- FOOTER --- */
 footer {
-    /***************/
-    /* Typographie */
-    /***************/
-    color: #fff;
-    /* Texte en blanc */
-    text-align: center;
-    /* Centre le texte horizontalement */
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    padding: 20px;
-    /* Espace intérieur autour du contenu */
-
-    /****************************/
-    /* Couleurs & Arrière-plans */
-    /****************************/
-    background: linear-gradient(135deg, #1e3a5f, #0a2340, #224c80, #162d50);
-    /* Dégradé diagonal combinant plusieurs tons de bleu foncé à clair */
-    background-size: 200% 200%;
-    /* Agrandit le gradient pour permettre le déplacement et créer l'animation visuelle */
-
-    /***************/
-    /* Transitions */
-    /***************/
-    transition: background-position 0.5s ease;
-    /* Rend le déplacement du gradient fluide sur 0.5 seconde */
-}
-
-footer:hover {
-    background-position: right bottom;
-    /* Déplace le gradient vers le coin inférieur droit au survol */
-}
-
-footer p {
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin: 0;
-    /* Supprime la marge par défaut autour du paragraphe */
-}
-
-/* --- Réseaux sociaux dans le footer --- */
-footer .socials {
-    /***********/
-    /* Flexbox */
-    /***********/
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-
-    /**********************/
-    /* Boîte & Espacement */
-    /**********************/
-    margin-top: 15px;
-}
-
-footer .socials a {
-    /***************/
-    /* Typographie */
-    /***************/
-    font-size: 28px;
-    color: white;
-
-    /***************/
-    /* Transitions */
-    /***************/
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-footer .socials a:hover {
-    /*******************/
-    /* Transformations */
-    /*******************/
-    transform: translateY(-3px) scale(1.2);
-
-    /************/
-    /* Couleurs */
-    /************/
-    color: #00a2ff;
-    /* Changement de couleur au survol */
+  margin-top: var(--space-xl);
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--color-light);
 }
