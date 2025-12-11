@@ -1,5 +1,4 @@
 @import url('variables.css');
-@import url('polices/poppins.css'); /* si tu en as */
 
 * {
   margin: 0;
@@ -78,3 +77,4 @@ footer {
   padding: var(--space-md);
   background: var(--color-light);
 }
+
