@@ -1,32 +1,51 @@
 @import url('variables.css');
 
-.hero {
-  background: url('../images/header-bg.jpg') center/cover;
-  padding: var(--space-xl) var(--space-lg);
-  text-align: center;
-  color: black;
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
 }
 
-.hero h1 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-md);
+.home-title {
+    font-size: 3rem;
 }
 
-.hero p {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-lg);
+/* Catégories */
+.home-categories {
+    display: flex;
+    gap: 2rem;
 }
 
-.btn {
-  display: inline-block;
-  background: var(--color-secondary);
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius);
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
+/* Liens */
+.home-categories a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--color-brand-primary);
+    padding: 0.6rem 1.4rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.btn:hover {
+/* Hover */
+.home-categories a:hover {
+    transform: scale(1.2);
+    background: rgba(0, 115, 230, 0.12);
+}
+
+.home-intro {
+    max-width: 500px;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.home-intro p {
+    margin-bottom: 1rem;
+}
+
   background: var(--color-hover);
 }
+
