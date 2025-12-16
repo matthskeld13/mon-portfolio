@@ -1,0 +1,32 @@
+@import url('variables.css');
+
+.about-page {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    max-width: 600px;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+.about-content h1 {
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+.about-content a {
+    text-decoration: none;
+    color: var(--color-brand-primary);
+    font-weight: bold;
+}
