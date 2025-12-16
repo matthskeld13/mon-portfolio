@@ -5,6 +5,11 @@
   --color-light: #f5faff;
   --color-dark: #222;
   --color-bg: #ffffff;
+  --color-bg-header: linear-gradient(135deg, #0073e6, #004a99);
+  --color-bg-footer: linear-gradient(135deg, #1e3a5f, #0a2340);
+  --color-bg-body: linear-gradient(135deg, #e8f0ff 0%, #f9fcff 100%);
+
+
 
   /* === Couleurs états === */
   --color-hover: #0094ff;
