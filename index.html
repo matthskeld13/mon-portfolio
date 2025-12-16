@@ -1,78 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portefolio de Matthias Lemaire</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil – Mon Portfolio</title>
 
-  <!-- CSS global -->
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accueil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS spécifique à cette page -->
-  <link rel="stylesheet" href="css/accueil.css">
-
-  <!-- Font Awesome CDN pour icônes -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
-<header>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="projets.html">Projets</a>
-  </nav>
+<header class="site-header">
+    <nav class="site-nav" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a href="./projets.html">Projets</a>
+        <a href="./about.html">À propos</a>
+    </nav>
 </header>
 
-<main>
 
-  <section class="hero" aria-label="Section principale d'accueil">
-    <h1>Bienvenue</h1>
-    <p>Découvrez mes projets et mon univers web.</p>
-          
-  </section>
-  
-  <nav aria-label="Navigation interne à la page">
+<main class="home">
 
-  </nav>
+    <h1 class="home-title">Portefolio de Matthias Lemaire</h1>
 
-
-  <!-- À propos -->
-
-  <section id="about" aria-labelledby="titre-about">
-
-      <h2 class="icon-about" id="titre-about">À propos</h2>
-
-      <p>Je suis étudiant en L1 de Mathématiques à l'Université du Littoral Côte d'Opale. Passionné par le développement web, je crée des sites et des applications en utilisant diverses technologies telles que HTML, CSS, JavaScript et PHP. Ce portefolio présente mes projets, mes compétences et mon parcours dans le domaine du développement web.</p>
-
-      <address role="contentinfo" aria-label="Coordonnées">
-
-                <dl>
-
-                    <dt>Localisation :</dt>
-
-                    <dd>Calais, France</dd>
-
-                    <dt>Site Ulco :</dt>
-
-                    <dd><a href="https://www.univ-littoral.fr/" target="_blank">univ-littoral.fr</a></dd>
-
-                    <dt>Email :</dt>
-
-                    <dd><a href="mailto:matthias.lemaire@etu.univ-littoral.fr">matthias.lemaire@etu.univ-littoral.fr</a></dd>
-
-                </dl>
-
-            </address>
-
-        </section>
+<section class="home-intro">
+    <p>Bienvenue sur mon portfolio.</p>
+    <p>Vous trouverez ici mes projets et mon parcours.</p>
+</section>
 
 </main>
 
-<footer>
-  <p>&copy; 2025 – Matthias Lemaire</p>
+<footer class="site-footer">
+    <p>&copy; 2025 — Matthias Lemaire</p>
 </footer>
+
 
 </body>
 </html>
