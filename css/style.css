@@ -1,5 +1,4 @@
 @import url('variables.css');
-@import url('polices/poppins.css'); /* si tu en as */
 
 /* Reset léger */
 * {
@@ -74,3 +73,4 @@ h1, h2, h3 {
 .site-footer p {
     font-size: 0.9rem;
 }
+
